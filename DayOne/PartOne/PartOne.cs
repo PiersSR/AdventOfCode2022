@@ -3,9 +3,9 @@
     using System.IO;
     using System.Linq;
 
-    class Dayone
+    class PartOne : Solution
     {
-        static void Main(string[] args)
+        public override T ResolvePuzzle<T>(string[] args)
         {
             string input = File.ReadAllText(args[0]);
 
@@ -26,7 +26,7 @@
             // Sort the list by the total calories in each elf's inventory and return the first (highest) value.
             int highestCaloryElf = summedCalories.OrderByDescending(calories => calories).First();
 
-            Console.WriteLine(highestCaloryElf);
+            return (T)Convert.ChangeType(highestCaloryElf, typeof(T));
         }
     }
 }
