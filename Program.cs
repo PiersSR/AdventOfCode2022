@@ -4,7 +4,7 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            PartTwo puzzle = new PartTwo();
+            DayTwoPartTwo puzzle = new DayTwoPartTwo();
             var result = puzzle.ResolvePuzzle<int>(args);
 
             Console.WriteLine(result);
