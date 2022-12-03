@@ -3,7 +3,7 @@ namespace AdventOfCode
     using System.IO;
     using System.Linq;
 
-    public class PartTwo : Solution
+    public class DayOnePartTwo : Solution
     {
         private const int N_ELVES_TO_SUM = 3;
         public override T ResolvePuzzle<T>(string[] args)
