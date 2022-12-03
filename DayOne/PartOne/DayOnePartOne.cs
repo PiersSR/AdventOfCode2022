@@ -1,11 +1,10 @@
-namespace AdventOfCode
+﻿namespace AdventOfCode
 {
     using System.IO;
     using System.Linq;
 
-    public class PartTwo : Solution
+    class DayOnePartOne : Solution
     {
-        private const int N_ELVES_TO_SUM = 3;
         public override T ResolvePuzzle<T>(string[] args)
         {
             string input = File.ReadAllText(args[0]);
@@ -24,10 +23,10 @@ namespace AdventOfCode
                 summedCalories.Add(summedCaloriesForElf);
             }
 
-            // Sort the list by the total calories in each elf's inventory and return the sum of the highest 3 values.
-            int calroiesHeldByTopThreeElves = summedCalories.OrderByDescending(calories => calories).Take(N_ELVES_TO_SUM).Sum();
+            // Sort the list by the total calories in each elf's inventory and return the first (highest) value.
+            int highestCaloryElf = summedCalories.OrderByDescending(calories => calories).First();
 
-            return (T)Convert.ChangeType(calroiesHeldByTopThreeElves, typeof(T));
+            return (T)Convert.ChangeType(highestCaloryElf, typeof(T));
         }
     }
 }
